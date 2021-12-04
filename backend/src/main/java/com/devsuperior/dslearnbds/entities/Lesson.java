@@ -1,7 +1,9 @@
 package com.devsuperior.dslearnbds.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -14,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -32,6 +35,9 @@ public abstract class Lesson implements Serializable {
     @JoinColumn(name = "section_id")
     private Section section;
 
+    @OneToMany(mappedBy = "lesson")
+    private List<Deliver> deliveries = new ArrayList<>();
+
     @ManyToMany
     @JoinTable(name = "tb_lessons_done", joinColumns = @JoinColumn(name = "lesson_id"), inverseJoinColumns = {
             @JoinColumn(name = "user_id"),
@@ -43,6 +49,7 @@ public abstract class Lesson implements Serializable {
     }
 
     public Lesson(Long id, String title, Integer position, Section section) {
+        super();
         this.id = id;
         this.title = title;
         this.position = position;
@@ -50,7 +57,7 @@ public abstract class Lesson implements Serializable {
     }
 
     public Long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Long id) {
@@ -58,7 +65,7 @@ public abstract class Lesson implements Serializable {
     }
 
     public String getTitle() {
-        return this.title;
+        return title;
     }
 
     public void setTitle(String title) {
@@ -66,7 +73,7 @@ public abstract class Lesson implements Serializable {
     }
 
     public Integer getPosition() {
-        return this.position;
+        return position;
     }
 
     public void setPosition(Integer position) {
@@ -74,15 +81,19 @@ public abstract class Lesson implements Serializable {
     }
 
     public Section getSection() {
-        return this.section;
+        return section;
     }
 
     public void setSection(Section section) {
         this.section = section;
     }
 
-    public Set<Enrollment> getEnrollmentDone() {
-        return this.enrollmentsDone;
+    public Set<Enrollment> getEnrollmentsDone() {
+        return enrollmentsDone;
+    }
+
+    public List<Deliver> getDeliveries() {
+        return deliveries;
     }
 
     @Override
@@ -101,7 +112,7 @@ public abstract class Lesson implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Section other = (Section) obj;
+        Lesson other = (Lesson) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
