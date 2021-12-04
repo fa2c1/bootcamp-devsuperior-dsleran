@@ -39,8 +39,9 @@ public class Resource implements Serializable {
     public Resource() {
     }
 
-    public Resource(Long id, String title, String description, Integer position, String imgUri,
-            ResourceType type, Offer offer) {
+    public Resource(Long id, String title, String description, Integer position, String imgUri, ResourceType type,
+            Offer offer) {
+        super();
         this.id = id;
         this.title = title;
         this.description = description;
@@ -51,7 +52,7 @@ public class Resource implements Serializable {
     }
 
     public Long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Long id) {
@@ -59,7 +60,7 @@ public class Resource implements Serializable {
     }
 
     public String getTitle() {
-        return this.title;
+        return title;
     }
 
     public void setTitle(String title) {
@@ -67,7 +68,7 @@ public class Resource implements Serializable {
     }
 
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
     public void setDescription(String description) {
@@ -75,7 +76,7 @@ public class Resource implements Serializable {
     }
 
     public Integer getPosition() {
-        return this.position;
+        return position;
     }
 
     public void setPosition(Integer position) {
@@ -83,7 +84,7 @@ public class Resource implements Serializable {
     }
 
     public String getImgUri() {
-        return this.imgUri;
+        return imgUri;
     }
 
     public void setImgUri(String imgUri) {
@@ -99,7 +100,7 @@ public class Resource implements Serializable {
     }
 
     public Offer getOffer() {
-        return this.offer;
+        return offer;
     }
 
     public void setOffer(Offer offer) {
@@ -130,5 +131,4 @@ public class Resource implements Serializable {
             return false;
         return true;
     }
-
 }

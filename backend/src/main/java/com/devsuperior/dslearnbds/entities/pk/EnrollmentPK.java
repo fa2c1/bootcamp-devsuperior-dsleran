@@ -25,12 +25,13 @@ public class EnrollmentPK implements Serializable {
     }
 
     public EnrollmentPK(User user, Offer offer) {
+        super();
         this.user = user;
         this.offer = offer;
     }
 
     public User getUser() {
-        return this.user;
+        return user;
     }
 
     public void setUser(User user) {
@@ -38,7 +39,7 @@ public class EnrollmentPK implements Serializable {
     }
 
     public Offer getOffer() {
-        return this.offer;
+        return offer;
     }
 
     public void setOffer(Offer offer) {

@@ -33,7 +33,7 @@ public class Task extends Lesson {
     }
 
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
     public void setDescription(String description) {
@@ -41,7 +41,7 @@ public class Task extends Lesson {
     }
 
     public Integer getQuestionCount() {
-        return this.questionCount;
+        return questionCount;
     }
 
     public void setQuestionCount(Integer questionCount) {
@@ -49,7 +49,7 @@ public class Task extends Lesson {
     }
 
     public Integer getApprovalCount() {
-        return this.approvalCount;
+        return approvalCount;
     }
 
     public void setApprovalCount(Integer approvalCount) {
@@ -57,7 +57,7 @@ public class Task extends Lesson {
     }
 
     public Double getWeight() {
-        return this.weight;
+        return weight;
     }
 
     public void setWeight(Double weight) {
@@ -65,11 +65,10 @@ public class Task extends Lesson {
     }
 
     public Instant getDueDate() {
-        return this.dueDate;
+        return dueDate;
     }
 
     public void setDueDate(Instant dueDate) {
         this.dueDate = dueDate;
     }
-
 }

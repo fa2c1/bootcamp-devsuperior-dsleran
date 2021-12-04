@@ -17,7 +17,7 @@ public class Section implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
     private String title;
     private String description;
     private Integer position;

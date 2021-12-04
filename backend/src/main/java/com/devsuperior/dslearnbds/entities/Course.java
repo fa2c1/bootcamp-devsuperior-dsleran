@@ -18,7 +18,7 @@ public class Course implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
     private String name;
     private String imgUri;
     private String imgGrayUri;
@@ -30,6 +30,7 @@ public class Course implements Serializable {
     }
 
     public Course(Long id, String name, String imgUri, String imgGrayUri) {
+        super();
         this.id = id;
         this.name = name;
         this.imgUri = imgUri;
@@ -37,7 +38,7 @@ public class Course implements Serializable {
     }
 
     public Long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Long id) {
@@ -45,7 +46,7 @@ public class Course implements Serializable {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(String name) {
@@ -53,7 +54,7 @@ public class Course implements Serializable {
     }
 
     public String getImgUri() {
-        return this.imgUri;
+        return imgUri;
     }
 
     public void setImgUri(String imgUri) {
@@ -61,7 +62,7 @@ public class Course implements Serializable {
     }
 
     public String getImgGrayUri() {
-        return this.imgGrayUri;
+        return imgGrayUri;
     }
 
     public void setImgGrayUri(String imgGrayUri) {
@@ -69,7 +70,7 @@ public class Course implements Serializable {
     }
 
     public List<Offer> getOffers() {
-        return this.offers;
+        return offers;
     }
 
     @Override

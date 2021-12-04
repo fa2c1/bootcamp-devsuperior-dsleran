@@ -21,7 +21,7 @@ public class Content extends Lesson {
     }
 
     public String getTextContent() {
-        return this.textContent;
+        return textContent;
     }
 
     public void setTextContent(String textContent) {
@@ -29,7 +29,7 @@ public class Content extends Lesson {
     }
 
     public String getVideoUri() {
-        return this.videoUri;
+        return videoUri;
     }
 
     public void setVideoUri(String videoUri) {

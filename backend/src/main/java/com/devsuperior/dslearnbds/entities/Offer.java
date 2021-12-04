@@ -38,10 +38,14 @@ public class Offer implements Serializable {
     @OneToMany(mappedBy = "offer")
     private List<Resource> resources = new ArrayList<>();
 
+    @OneToMany(mappedBy = "offer")
+    private List<Topic> topics = new ArrayList<>();
+
     public Offer() {
     }
 
     public Offer(Long id, String edition, Instant startMoment, Instant endMoment, Course course) {
+        super();
         this.id = id;
         this.edition = edition;
         this.startMoment = startMoment;
@@ -50,7 +54,7 @@ public class Offer implements Serializable {
     }
 
     public Long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Long id) {
@@ -58,7 +62,7 @@ public class Offer implements Serializable {
     }
 
     public String getEdition() {
-        return this.edition;
+        return edition;
     }
 
     public void setEdition(String edition) {
@@ -66,7 +70,7 @@ public class Offer implements Serializable {
     }
 
     public Instant getStartMoment() {
-        return this.startMoment;
+        return startMoment;
     }
 
     public void setStartMoment(Instant startMoment) {
@@ -74,7 +78,7 @@ public class Offer implements Serializable {
     }
 
     public Instant getEndMoment() {
-        return this.endMoment;
+        return endMoment;
     }
 
     public void setEndMoment(Instant endMoment) {
@@ -93,6 +97,10 @@ public class Offer implements Serializable {
         return resources;
     }
 
+    public List<Topic> getTopics() {
+        return topics;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -109,7 +117,7 @@ public class Offer implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Course other = (Course) obj;
+        Offer other = (Offer) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
